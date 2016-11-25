@@ -1,0 +1,29 @@
+{%extends 'blog/base.html'%}
+{%block content%}
+<div class="row">
+  <div class="col s12 m6 offset-m3 l4 offset-l4">
+    <div class="card black-text">
+      <form method="POST">{% csrf_token %}
+      <div class="card-content">
+        <center><span class="card-title">Agregar alumno</span></center>
+        <br>
+        {{ formulario.non_field_errors }}
+        <div class="input-field">
+            {{ formulario.nombre.errors }}
+            <label for="{{ formulario.nombre.id_for_label }}">Nombre</label>
+            {{ formulario.nombre }}
+        </div>
+        <div class="input-field">
+            {{ formulario.apellido.errors }}
+            <label for="{{ formulario.apellidos.id_for_label }}">Apellido</label>
+            {{ formulario.apellidos }}
+        </div>
+        <center><button class="btn waves-effect red darken-1" type="submit">Guardar</button> <a href="/" class="btn waves-effect red darken-1">Cancelar</a></center>
+      </div>
+      <div class="card-action">
+      </div>
+      </form>
+    </div>
+  </div>
+</div>
+{%endblock%}

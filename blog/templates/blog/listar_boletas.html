@@ -1,0 +1,20 @@
+{% extends 'blog/base.html' %}
+{% block content %}
+<table class="responsive-table bordered highlight centered">
+  <tbody>
+    {%for Boleta in Boleta%}
+    <tr>
+    <td>{{Boleta.calificaciones}}</td>
+    <td>
+      {%for Alumnos in Boleta.Alumno.all%}
+      {{Alumnos}}
+      {%endfor%}
+    </td>
+    <td>{{Boleta.Curso}}</td>
+    <td>{{Boleta.fecha_publicacion}}</td>
+    <td><a href="editar_boleta/{{Boleta.pk}}">Eliminar</a> <a href="editar_boleta/{{Boleta.pk}}">Modificar</a></td>
+  </tr>
+    {%endfor%}
+  </tbody>
+</table>
+{%endblock%}

@@ -222,7 +222,7 @@ def iniciar(request):
         else:
             logout(request)
             formulario = AuthenticationForm()
-            return render(request, 'blog/login.html', {'formulario': formulario,'mensaje':'Usuario sin grupo asignado'})
+            return render(request, 'blog/post_detailboleta.html', {'formulario':formulario,})
     if request.method == "POST":
         formulario = AuthenticationForm(request.POST)
         if formulario.is_valid:

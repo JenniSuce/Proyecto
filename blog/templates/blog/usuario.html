@@ -1,6 +1,7 @@
 {%extends 'blog/base.html'%}
 {%block content%}
-<p>Bienvenido {{ usuario }},!</p>
+
+<p>Hola {{ usuario }}, bienvenido!</p>
 
 <div class="row">
   <div class="col s12 m6 offset-m3 l4 offset-l4">
@@ -16,10 +17,9 @@
       </center>
       </div>
       <div class="card-action">
-        <a href="administrador/usuarios/editar_usuario/{{ usuario.pk }}">Editar</a>
+        <a href="/usuario/boleta/boleta">Ir a boleta</a>
       </div>
     </div>
   </div>
 </div>
-
 {%endblock%}

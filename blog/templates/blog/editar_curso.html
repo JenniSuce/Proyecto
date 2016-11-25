@@ -1,0 +1,25 @@
+{%extends 'blog/base.html'%}
+{%block content%}
+<div class="row">
+  <div class="col s12 m6 offset-m3 l4 offset-l4">
+    <div class="card black-text">
+      <form method="POST">{% csrf_token %}
+      <div class="card-content">
+        <center><span class="card-title">Editar curso</span></center>
+        <br>
+        {{ formulario.non_field_errors }}
+        <div class="input-field">
+            {{ formulario.nombrecurso.errors }}
+            <label for="{{ formulario.nombrecurso.id_for_label }}">Nombre del curso</label>
+            {{ formulario.nombrecurso }}
+        </div>
+        <center><button class="btn waves-effect red darken-1" type="submit">Guardar</button> <a href="/" class="btn waves-effect red darken-1">Cancelar</a> </center>
+      </div>
+      <div class="card-action">
+        <p ><center class="red-text">{{ mensaje }}</center></p>
+      </div>
+      </form>
+    </div>
+  </div>
+</div>
+{%endblock%}
